@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>js projects</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <div class="main">
+        <section id="projects">
+            <div class="box">
+                <h2>Projects</h2>
+                <ul>
+                    <a href="pages/slider.html">
+                        <li>slider</li>
+                    </a>
+                    <a href="pages/virtual-keyboard.html">
+                        <li>virtual keyboard</li>
+                    </a>
+                    <a href="pages/pagination.html">
+                        <li>pagination</li>
+                    </a>
+                    <a href="pages/clock-now.html">
+                        <li>clock now</li>
+                    </a>
+                    <a href="pages/countDown.html">
+                        <li>count Down</li>
+                    </a>
+                    <a href="pages/autoComplete.html">
+                        <li>auto complete & search suggestion</li>
+                    </a>
+                    <a href="pages/scrollBar.html">
+                        <li>scroll Bar</li>
+                    </a>
+                    <a href="pages/change-theme-color.html">
+                        <li>change Theme Color</li>
+                    </a>
+                    <a href="pages/brightness-changer.html">
+                        <li>brightness Changer</li>
+                    </a>
+                    <a href="pages/customizeMenuContex.html">
+                        <li>castumize menu context</li>
+                    </a>
+                    <a href="pages/dragAndDrop.html">
+                        <li>drag and drop</li>
+                    </a>
+                    <a href="pages/makePasswordVisable.html">
+                        <li>make password visual</li>
+                    </a>
+                    <a href="pages/max-input-length.html">
+                        <li>max input lenght</li>
+                    </a>
+                    <a href="pages/modal.html">
+                        <li>modal</li>
+                    </a>
+                    <a href="pages/selectCityByStates.html">
+                        <li>select city by state</li>
+                    </a>
+
+                </ul>
+            </div>
+        </section>
+        <section class="box" id="Apps">
+            <h2>Apps</h2>
+            <ul>
+                <a href="pages/shop.html">
+                    <li>Shop</li>
+                </a>
+                <a href="pages/keyCode.html">
+                    <li>key code</li>
+                </a>
+                <a href="pages/login.html">
+                    <li>login</li>
+                </a>
+                <a href="pages/bookApp.html">
+                    <li>book App</li>
+                </a>
+                <a href="pages/musicPlayer.html">
+                    <li>music player</li>
+                </a>
+                <a href="pages/Note-App.html">
+                    <li>note app</li>
+                </a>
+                <a href="pages/ToDoApplication.html">
+                    <li>to do app</li>
+                </a>
+                <a href="pages/wheatherApp.html">
+                    <li>weather app</li>
+                </a>
+                <a href="pages/convertCelcuseToFirenhite.html">
+                    <li>convert celcuse to forenhite</li>
+                </a>
+                <a href="pages/BMI.html">
+                    <li>BMI app</li>
+                </a>
+                <a href="#" class="11">
+                    <li>123123</li>
+                </a>
+                <a href="#" class="11">
+                    <li>4556456</li>
+                </a>
+            </ul>
+        </section>
+    </div>
+
+
+    <script type="module">
+        let spans = document.getElementsByClassName("11");
+
+        //// first way (using Array.from)
+        // Array.from(spans).map(element => {
+        //     console.log(element)
+        // });
+
+        // better way (using for of)
+        for (let elem of spans) {
+            console.log(elem)
+        }
+
+        function sum2() {
+            let numbers = arguments;
+            let sum = 0;
+            
+            
+            //// first way (using Array.from + use forEach methid)
+            // Array.from(numbers).forEach(element => sum += element)
+
+            // second way (using for of loop)
+            for (let item of numbers) {
+                sum += item;
+            }
+            return sum;
+        }
+
+        // let sum2 = (...nums) =>{
+        //     let sum = 0;
+        //     nums.forEach(element => sum += element);
+        //     return sum;
+        // }
+
+        let test2 = String(sum2(1, 5, 6, 6, 6, 4, 9, 7, 5, 77, 7, 7, 8)).padEnd(3,0);
+        test2 > 100 && console.log(test2);
+        test2 < 0 || test2 === 200 || console.log(test2);
+
+        import{productsInfo} from './js/shop.js'
+        console.log(productsInfo)
+
+        let users = {
+            id: 21,
+            name: "ali",
+            email: "ali@gmail.com"
+        }
+
+        for (let inf in users) {
+            console.log(`${inf}: ${users[inf]}`)
+        }
+    </script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
