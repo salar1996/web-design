@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="IR-fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
+
+    <title>shop</title>
+</head>
+
+<body onload="loadProducts()">
+    <!-- navBar -->
+    <nav class="navbar ">
+        <div class="container-fluid text-center">
+            <a href="shop.html">
+                <h1 class="navbar-brand " href="#">فروشگاه مرکزی سالار</h1>
+            </a>
+        </div>
+        <p class="cart">
+            <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+            <span class="cart-number">0</span>
+        </p>
+    </nav>
+    <!-- end of navbar -->
+    <!-- products -->
+    <div class="container">
+        <ul class="product-container">
+            <!-- <li class="type-product" onmouseenter="showAddToCartButton()">
+                <div class="product">
+                        <div class="product-image">
+                            <img width="183px" height="183px" src="../images/products/1.png">
+                        </div>
+                        <span class="product-titte">محصول 1 </span>
+                        <del aria-hidden="true">
+                            <span class="product-price">25.000</span>
+                        </del>
+                        <ins class="product-sale-price">20.000</ins>
+                </div>
+                <div class="add-to-cart">
+                    <button class="add-to-cart-button">افزودن به سبد خرید</button>
+                </div>
+            </li> -->
+        </ul>
+
+        <div class="pagenumbers" id="pagination">
+            <!-- <button>1</button>
+            <button>2</button>
+            <button>3</button> -->
+          </div>
+    </div>
+
+    <!-- cart -->
+    <div class="cart-modal">
+        <div class="cart-title">
+            <span class="close-curt"><i class="fa fa-times"></i></span>
+            <div class="my-cart">
+                <i class="fa fa-shopping-bag">سبد خرید</i>
+                <span>سبد خرید</span>
+            </div>
+        </div>
+        <div class="cart-contents">
+            <ul class="cart-items">
+                <!-- <li class="cart-item">
+                    <span class="remove-item-from-cart"><i class="fa-solid fa-trash"></i></span>
+                    <a href="#">
+                        <img src="../images/products/1.png" width="62px" height="62px">
+                        <span class="product-title">محصول 1</span>
+                        <span class="cart-quantity">
+                            1 × 10.500 تومان
+                        </span>
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+        <p class="total">
+            <strong>مجموع: </strong>
+            <span class="cart-total-price">0 تومان</span>
+        </p>
+        <p class="cart-buttons">
+            <a href="#" class="button wc-forward"> مشاهده سبد خرید</a>
+            <a href="#" class="button checkout wc-forward"> تسویه حساب</a>
+        </p>
+    </div>
+
+    <script src="../js/shop.js"></script>
+    <script src="../js/font-awesome.js"></script>
+    <!-- <script src="../js/bootstrap.js"></script> -->
+</body>
+
+</html>

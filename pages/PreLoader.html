@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preload + convert celcuse to firenhite</title>
+    <link rel="stylesheet" href="../css/font-awesome.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section.box {
+            width: 400px;
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 25px;
+            border: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        p#title {
+            font-size: 2em;
+            font-weight: 600;
+
+        }
+
+
+        input,
+        button {
+            width: 30%;
+            padding: 7px 20px;
+            margin: 25px 5px 25px 5px;
+            cursor: pointer;
+            border-radius: 100px;
+            border: none;
+            box-shadow: 0 0 3px 0 #111;
+        }
+
+        form input#main-value {
+            padding: 15px 30px;
+        }
+
+        p#result {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #db3c3c;
+        }
+
+
+        .container{
+            background: url("../images/backgrounds/003.jpg") no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .preloader{
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="../images/Spinner-3.gif" alt="preloader">
+    </div>
+    
+    <div class="container">
+        <section class="box">
+            <p id="title">Convert &#8451; to &#176;f</p>
+            <form>
+                <input type="text" placeholder="&#8451;" id="main-value"><br>
+                <p id="result"></p>
+            </form>
+            <input type="submit" value="convert" id="submit">
+            <input type="reset" id="reset">
+            <button id="change">change</button>
+    
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener("load",function(){
+            document.querySelector(".container").style.display = "flex";
+            document.querySelector(".preloader").style.display = "none";
+            console.log("load")
+        })
+
+
+        document.querySelector("#submit").addEventListener("click", convert)
+
+        function convert() {
+            let valueInserted = Number(document.querySelector("#main-value").value);
+
+            if (isNaN(valueInserted)) {
+                document.querySelector("#result").innerHTML = "Just Insert a valid number!";
+            } else {
+                let IsCelcuse = document.querySelector("#title").innerHTML;
+                if (IsCelcuse === "Convert ℃ to °f") {
+                    let result = (valueInserted * 1.8) + 32;
+                    document.querySelector("#result").innerHTML = valueInserted + " ℃ = " + result.toFixed("2") + " °f";
+                } else if (IsCelcuse === "Convert °f to ℃") {
+
+                    let result = (valueInserted - 32) / 1.8;
+                    document.querySelector("#result").innerHTML = valueInserted + " °f = " + result.toFixed("2") + " ℃";
+                }
+            }
+        }
+
+
+        document.querySelector("#change").addEventListener("click", changeFunction);
+
+        function changeFunction() {
+            let IsCelcuse = document.querySelector("#title").innerHTML;
+
+            if (IsCelcuse === "Convert ℃ to °f") {
+                document.querySelector("#title").innerHTML = "Convert °f to ℃";
+                document.querySelector("#main-value").setAttribute("placeholder", "℃");
+            } else {
+                document.querySelector("#title").innerHTML = "Convert ℃ to °f";
+                document.querySelector("#main-value").setAttribute("placeholder", "°f");
+            }
+            
+        }
+
+        document.querySelector("#reset").addEventListener("click", function () {
+            document.querySelector("#main-value").value = "";
+            document.querySelector("#result").innerHTML = "";
+            console.log("done")
+        })
+
+    </script>
+</body>
+
+</html>

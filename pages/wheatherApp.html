@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
+    <title>wheather app</title>
+    <style>
+        
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url("../images/backgrounds/002.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+
+
+        #weather-info{
+            background-color: rgba(255, 255, 255, .8);
+            width: 350px;
+            border-radius: 25px;
+            padding: 30px;
+        }
+
+        #search-box{
+            display: inline-block;
+            width: 75%;
+            text-align: center;
+        }
+
+        #search-button{
+            display: inline-block;
+        }
+
+        .select-city{
+            width: 90%;
+            padding: 10px;
+            background-color: white;
+            border-radius: 100px;
+            border: none;
+            box-shadow:0 0 5px 1px #111;
+        }
+
+        #search-button button{
+            background-color: #222 ;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 100px;
+            border: none;
+        }
+
+        #city-info{
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        #tempurture{
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 35px;        
+        }
+
+        #wheather-icon, #wheather-phenomena, #humidity, #wind-speed{
+            font-size: 1.2em;
+            line-height: .5em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div id="weather-info" >
+        <div class="container">
+            <form id="search-box"  >
+                <!-- <select id="select-city">
+                    <option disabled selected>select a city</option>
+                    <option value="Tehran" >Tehran</option>
+                    <option value="Esfahan" >Esfahan</option>
+                    <option value="Shiraz" >Shiraz</option>
+                    <option value="Mashhad" >Mashhad</option>
+                    <option value="Tabriz" >Tabriz</option>
+                </select> -->
+                <input list="select-city" class="select-city" placeholder="type a city" >
+                <datalist id="select-city">
+                    <option value="Tehran" >Tehran</option>
+                    <option value="Esfahan" >Esfahan</option>
+                    <option value="Shiraz" >Shiraz</option>
+                    <option value="Mashhad" >Mashhad</option>
+                    <option value="Tabriz" >Tabriz</option>
+                </datalist>
+            </form>
+            <div id="search-button"  >
+                <button id="submit">search</button>
+            </div>
+
+            <div id="weatherInfo">
+                <p id="city-info"></p>
+                <p id="tempurture"></p>
+                <p id="main-weather-phenomena">
+                    <span id="wheather-icon"></span>
+                    <span id="wheather-phenomena"></span>
+                </p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+
+        let info = [
+            {city: "Tehran", tempurture: "26 &#8451;", phenomena:"sunny", humidity:"26%", windSpeed:"32 km/h"},
+            {city: "Esfahan", tempurture: "24 &#8451;", phenomena:"rainy", humidity:"16%", windSpeed:"30 km/h"},
+            {city: "Shiraz", tempurture: "28 &#8451;", phenomena:"sunny", humidity:"28%", windSpeed:"18 km/h"},
+            {city: "Mashhad", tempurture: "30 &#8451;", phenomena:"cloudy", humidity:"21%", windSpeed:"37 km/h"},
+            {city: "Tabriz", tempurture: "20 &#8451;", phenomena:"sunny", humidity:"36%", windSpeed:"8 km/h"}
+        ]
+
+        document.querySelector("#submit").addEventListener("click", getWeatherInfo);
+        document.querySelector(".select-city").addEventListener("select", getWeatherInfo);
+        // document.querySelector("#select-city").addEventListener("click", getWeatherInfo);
+        
+
+
+        function getWeatherInfo(){
+            let sitySelected = document.querySelector(".select-city").value;
+            if(sitySelected === ""){
+                document.querySelector("#weatherInfo").style.display = "none"
+            }
+            
+            function findCity (cityName){
+                let isInCity = info.some(function (item){
+                    return item.city === cityName;
+                })
+                return isInCity;
+            }
+
+            if(findCity(sitySelected) === false ){
+                alert("Please select a city from the drop/down list!")
+            }
+
+            let findCityIndex = info.findIndex(function(item){
+                return item.city === sitySelected;
+            })
+
+            document.querySelector("#city-info").innerHTML = "Weather in " + info[findCityIndex].city;
+            document.querySelector("#tempurture").innerHTML = info[findCityIndex].tempurture;
+            document.querySelector("#wheather-phenomena").innerHTML = info[findCityIndex].phenomena;
+            document.querySelector("#humidity").innerHTML = info[findCityIndex].humidity;
+            document.querySelector("#wind-speed").innerHTML = info[findCityIndex].windSpeed;
+        }
+
+
+        // document.querySelector("#search-box").addEventListener("blur", removeWeatherInfo)
+
+        // function removeWeatherInfo (){
+        //     document.querySelector("#weatherInfo").style.display = "none";
+        //     console.log("done");
+        // }
+
+
+        
+    </script>
+</body>
+</html>

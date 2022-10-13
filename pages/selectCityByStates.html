@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select cities by states</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url("../images/yuvraj-singh-JJpnPI8Hpgo-unsplash.jpg") no-repeat center;
+
+        }
+
+        section{
+            text-align: center;
+        }
+
+        div.box{
+            width: 500px;
+            height: 300px;
+            background-color: rgba(255, 255 , 255, .7);
+            /* margin: 180px auto; */
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        h1{
+            font-size: 18px;
+            padding: 15px ;
+            margin-bottom: 25px;
+        }
+
+        select{
+            background-color: aliceblue;
+            width: 80%;
+            margin: 0 auto 20px;
+            padding: 15px;
+            border-radius: 100px;
+            border: none;
+        }
+        label{
+            font-size: .9em;
+            margin-bottom: -15px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box">
+            <form>
+                <h1>فرم انتخاب شهر بر اساس استان</h1>
+
+                <label for="states">departure</label><br>
+                <select id="states" >
+                    <option value="Please select an state..." disabled selected >Please select an state...</option>
+                    <option value="Tehran" >Tehran</option>
+                    <option value="Shiraz" >Shiraz</option>
+                    <option value="Esfahan">Esfahan</option>
+                    <option value="Mashhad">Mashhad</option>
+                    <option value="Hamedan">Hamedan</option>
+                </select>
+
+                <label for="citis">destination</label><br>
+                <select id="citis">
+                    <option value="Please select an state..." disabled>Please select an state...</option>
+                    
+                </select>
+
+            </form>
+        </div>
+
+
+    </section>
+
+
+    <script>
+
+    let states = {
+        Tehran: ["Tehran","Shahryar","Eslamshahr","Shahr Qods","Shahr Rey"],
+        Shiraz: ["Shiraz1", "Shiraz2", "Shiraz3", "Shiraz4", "Shiraz5", "Shiraz6"],
+        Esfahan: ["Esfahan1", "Esfahan2", "Esfahan3", "Esfahan4", "Esfahan5", "Esfahan6"],
+        Mashhad: ["Mashhad1", "Mashhad2", "Mashhad3", "Mashhad4", "Mashhad5", "Mashhad6" ],
+        Hamedan: ["Hamedan1", "Hamedan2", "Hamedan3", "Hamedan3", "Hamedan5", "Hamedan6",]
+    }
+
+    document.querySelector("#states").addEventListener("change",selectCitis )
+
+    function selectCitis() {
+        let stateValue = document.querySelector("#states").value;
+        let stateSelected = states[stateValue];
+
+        let citisByState;
+        // for (var i=0 ; i < stateSelected.length ; i++) {
+        //      citisByState += "<option value=\"" +  stateSelected[i] + "\">" + stateSelected[i] + "</option>"
+        //      document.querySelector("#citis").innerHTML = citisByState;
+
+        // }
+
+
+        states[stateValue].forEach(function(city){
+            citisByState += "<option value=\"" +  city + "\">" + city + "</option>"
+        });
+        document.querySelector("#citis").innerHTML = citisByState;
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="IR-fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bookApp.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+
+
+    <title>book App</title>
+</head>
+<body>
+    
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+           Salar Book List App  <i class="fas fa-book-open text-warning"></i>
+        </h1>
+        <form id="book-form" autocomplete="off">
+
+            <div class="form-group">
+                <label for="code">کد کتاب</label>
+                <input type="number" id="code" class="form-control" />
+              </div>
+
+          <div class="form-group">
+            <label for="title">عنوان کتاب</label>
+            <input type="text" id="title" class="form-control" />
+          </div>
+  
+          <div class="form-group">
+            <label for="author">ناشر</label>
+            <input type="text" id="author" class="form-control" />
+          </div>
+  
+          <div class="form-group">
+              <input type="checkbox" id="instock" value="false"/>
+              <label for="instock">در انبار موجود است؟</label>
+          </div>
+
+          <div class="form-group d-none">
+            <label for="stock">تعداد موجودی انبار</label>
+            <input type="number" id="stock" class="form-control" />
+          </div>
+
+          <input
+            type="submit"
+            value="Add Book"
+            class="btn btn-warning btn-block"
+            id="submit"
+          />
+        </form>
+        <table class="table table-striped mt-5 text-center">
+          <thead>
+            <tr>
+              <th class="tools">عملیات</th>
+              <th class="code">کد کتاب</th>
+              <th class="title">عنوان</th>
+              <th class="author">ناشر</th>
+              <th class="in-stock">موجود در انبار؟</th>
+              <th class="stock">تعداد موجودی</th>
+            </tr>
+          </thead>
+          <tbody id="book-list">
+            <!-- <tr>
+              <td>
+                <ul class="operations">
+                    <li><i class="fas fa-trash"></i></li>
+                    <li><i class="fas fa-check"></i></li>
+                    <li><i class="fas fa-brush"></i></li>
+                </ul>
+              </td>
+              <td>5022</td>
+              <td>علی محمدی</td>
+              <td>علی محمدی</td>
+              <td><i class="fas fa-check"></i></td>
+              <td>3</td>
+            </tr> -->
+            
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+
+    <script src="../js/bookApp.js"></script>
+    <script src="../js/font-awesome.js"></script>
+</body>
+</html>

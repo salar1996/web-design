@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/test-app.css">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+
+    <title>music player</title>
+</head>
+<body>
+    <audio src="../media/Shabe Royaei(joyamusic).mp3"></audio>
+
+    <section>
+        <div class="music-bar">
+            <div id="image-holder">
+
+            </div>
+            <h1 id="music-name">shabhate royaye</h1>
+            <h2 id="singer">shadmehr</h2>
+    
+            <div id="time">
+                <span id="current-time">00:00</span>
+                <span id="total-time">00:00</span>
+            </div>
+            
+            <div id="time-line">
+                <div id="time-line-show-time"></div>
+                <div id="circle-showing-time-line"></div>
+            </div>
+    
+            <div id="controls">
+                <div>
+                    <ul class="control-elem">
+                        <li><i class="fa-solid fa-backward-fast"></i></li>
+                        <li><i class="fa-solid fa-play playAndPause"></i></li>
+                        <li style="display: none;"><i class="fa-solid fa-pause playAndPause"></i></li>
+                        <li><i class="fa-solid fa-forward-fast"></i></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <script src="../js/test-app.js"></script>
+    <script src="../js/font-awesome.js"></script>
+</body>
+</html>

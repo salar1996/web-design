@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #drop-box{
+            height: 200px;
+            width: 500px;
+            text-align: center;
+            background-color: burlywood;
+        }
+    </style>
+    <title>drag and drop</title>
+</head>
+<body>
+    <h1 class="name" id="1" draggable="true">salar</h1>
+    <h1 class="name" id="2" draggable="true">yashar</h1>
+    <div id="drop-box"></div>
+
+
+
+
+
+    <script>
+        let names = document.querySelectorAll(".name");
+        names.forEach(function(item){
+            item.addEventListener("dragstart", dragHandler)
+        })
+
+        document.querySelector("#drop-box").addEventListener("dragover",function(event){
+            event.preventDefault();
+        })
+
+        document.querySelector("#drop-box").addEventListener("drop", dropHandler)
+
+        function dragHandler (event){
+           event.dataTransfer.setData("idElem" , event.target.id)
+        }
+
+
+        function dropHandler(event){
+            let DropElemId = event.dataTransfer.getData("idElem")
+            let DragElem = document.getElementById(DropElemId)
+
+            document.querySelector("#drop-box").append(DragElem);
+        }
+
+</script>
+</body>
+</html>

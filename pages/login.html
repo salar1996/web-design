@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login / sign up</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <section id="main-content">
+        <div class="box">
+            <div id="userName-box" class="login-box">
+                <input type="text" placeholder="userName" id="userName" onblur="checkUserName()">
+                <p class="alert" id="alert-username"></p>
+            </div>
+            <div id="passWord-box" class="login-box">
+                <input type="password" placeholder="passWord" id="passWord" onblur="checkPassWord()">
+                <p class="alert" id="alert-password"></p>
+            </div>
+            <button onclick="checkInfo()">login</button>
+            <p id="create-account">
+                Not registered? <a href="#"> Create an account</a>
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>key code project</title>
+	<style>
+		* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: IranSans
+}
+
+
+body {
+	background: #d1d0d0;
+}
+
+#heading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 60px;
+	height: 100px;
+}
+
+#heading h1 {
+	font-weight: bold;
+	font-size: 50px;
+}
+
+#ascii {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 100px;
+	color: rgb(100, 98, 98);
+}
+
+#infos {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.info-box {
+	text-align: center;
+	width: 20%;
+	border: 1px solid #ccc;
+}
+
+.info-box h3 {
+	background: #b9e9ff;
+	border-bottom: 2px solid #b9e9ff;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.info-box h2 {
+	background: #fff;
+	padding: 5px;
+}
+
+#heading, #ascii, #infos {
+	display: none;
+}
+
+#starter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: bolder;
+	height: 100vh;
+}
+
+#starter #starter-text {
+	background: #fff;
+	padding: 20px;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 0 10px 0 #333;
+}
+	</style>
+  </head>
+
+  <body>
+
+    
+	<section id="starter">
+		<div id="starter-text">
+			Press any key to get the JavaScript event keycode
+		</div>
+	</section>
+
+	<div id="heading">
+		<h1>Salar KeyCode</h1>
+	</div>
+
+	<div id="ascii">
+		<h1 id="keyCode">128</h1>
+	</div>
+
+	<div id="infos">
+		<div class="info-box">
+			<h3>event.key</p>
+				<h2 id="key">Alt</h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.location</p>
+				<h2 id="location">Alt</h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.which</p>
+				<h2 id="which">Alt</h2>
+		</div>
+
+		<div class="info-box">
+			<h3>event.code</p>
+				<h2 id="code">Alt</h2>
+		</div>
+	</div>
+
+      
+    <script >
+		let $ = document
+		let locationKey = $.querySelector('#location')
+		let title = $.querySelector('title')
+
+
+		document.body.addEventListener('keydown', function (event) {
+        event.preventDefault();
+        
+		starter.style.display = 'none'
+		heading.style.display = 'flex'
+		ascii.style.display = 'flex'
+		infos.style.display = 'flex'
+
+        console.log(event)
+        $.getElementById("keyCode").innerHTML = event.keyCode;    
+        $.getElementById("key").innerHTML = event.key;    
+        $.getElementById("location").innerHTML = event.location;    
+        $.getElementById("which").innerHTML = event.which;    
+        $.getElementById("code").innerHTML = event.code;    
+
+        
+
+        
+})
+	</script>
+  </body>
+</html>

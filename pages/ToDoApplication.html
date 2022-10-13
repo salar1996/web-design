@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <style>
+        body{
+            background-color: #112244;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+
+        section{
+            width: 60%;
+            text-align: center;
+        }
+
+        #main-input{
+            margin: 100px auto  25px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        #main-input input{
+            margin: 15px;
+            width: 60%;
+            padding: 15px;
+            border: none;
+            border-radius: 100px;
+            box-shadow: 0 0 5px 0 #777;
+        } 
+
+        div#to-do-items div{
+            width:50%;
+            margin: 5px auto;
+            background-color:#0a162c;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        } 
+
+        .to-do-name{
+            display: inline-block;
+            text-align: justify;
+            width: 90%;
+            margin: 0;
+            font-size: .9em;
+            font-weight: 300;
+        }
+
+        .trash-box{
+            font-size: .8em;
+            cursor: pointer;
+        }
+
+        #message-box{
+            text-align: justify;
+            position: absolute;
+            top: 2%;
+            left: 10%;
+            width: 80%;
+            
+        }
+
+        .message{
+            padding: 10px;
+            margin: auto;
+            border: none;
+            border-radius: 5px;
+            background-color: aquamarine;
+            color: #0a162c;
+            margin-bottom: 5px;
+
+        }
+
+        .successful-icon{
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+
+        @keyframes fade-out {
+            0% {opacity: 100%;}
+            20% {opacity: 100%;}
+            100% {opacity: 0%;}
+        }
+
+    </style>
+    <title>To Do Application</title>
+</head>
+<body>
+    <section id="to-do-container">
+        <div id="message-box">
+        </div>
+        <div id="main-input">
+            <label for="new-to-do" >Add a new To Do</label><br/>
+            <input id="new-to-do" type="text" placeholder="add a new item">
+        </div>
+        <div id="to-do-items">
+        </div>  
+    </section>
+
+
+    <script src="../js/font-awesome.js">s</script>
+    <script>
+        let toDoItem = document.getElementById("new-to-do");
+        let addNewToDo = document.getElementById("to-do-items");
+        var test = false;
+
+
+        toDoItem.addEventListener("keydown", function(event){
+            // // primary way
+            // let checkKey = event.key;
+
+            //// shortcut way
+            let {key: checkKey} = event;
+
+            if(checkKey === "Enter"){
+                let newToDo = toDoItem.value.trim();
+                if(newToDo){
+                    toDoItem.value = ""
+                let addItem = document.createElement("div")
+                addItem.innerHTML = "<p class=\"to-do-name\">" + newToDo + "</p> <span class=\"trash-icon\"> <i class=\"fa-solid fa-trash trash-box\"></i>"
+                addNewToDo.append(addItem);
+                addItem.children[1].addEventListener("click", function(){
+                addItem.remove();
+                removeMessage (addItem.children[0].innerHTML);
+
+                })  
+                }
+            }
+        })
+
+
+        function removeMessage (item){
+            let message = document.createElement("div")
+            message.innerHTML = "<div class=\"message\"> <span class=\"successful-icon\"> <i class=\"fa-solid fa-check\"></i></span>" + "\"" + item + "\"" + " removed!" + "</div></div>"
+            message.style = "animation: fade-out 3s forwards;"
+            document.getElementById("message-box").append(message);
+            setInterval(function(){
+                message.remove();
+            }, 3000)
+        }
+        //// the wrong way!
+        // let removeItem = document.getElementsByClassName("trash-icon");
+        // for(var i = 0 ; i < removeItem.length ; i++){
+        //     removeItem[i].addEventListener("click", function(event){
+        //         let removeDiv = event.target.parentElement.parentElement.parentElement.innerHTML;
+        //         let findElemet = document.querySelectorAll(".to-do-item");
+        //         findElemet.find(function(item){
+        //             return item.innerHTML = removeDiv
+        //         })
+        //     })
+        // }
+
+
+        
+        
+    </script>
+</body>
+</html>

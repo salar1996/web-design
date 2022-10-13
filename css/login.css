@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    background-color:darkolivegreen;
+
+}
+
+div.box{
+    width: 350px;
+    height: auto;
+    background-color: aliceblue;
+    margin: 10% auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+div.login-box{
+    text-align: center;
+    
+}
+
+div.login-box input{
+    width: 80%;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button{
+    width: 80%;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: aliceblue;
+    background-color: darkolivegreen;
+    font-weight: 600;
+}
+
+p#create-account{
+    font-size: .8em;
+    color: gray;
+    padding-bottom: 20px;
+}
+
+div.box p a{
+    font-size: 1.1em;
+    font-weight: 600;
+    color:darkolivegreen;
+    text-decoration: none;
+}
+
+.alert {
+    text-align: center;
+    color: red;
+    padding: 5px;
+    font-size: .8em;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}

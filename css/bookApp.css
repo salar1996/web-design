@@ -1,0 +1,60 @@
+div form{
+    text-align: center;
+}
+
+div form#book-form label{
+    padding: 3px 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+div form#book-form div{
+    text-align: right;
+    width: 60%;
+    margin: 5px auto;
+}
+
+#submit{
+    margin-top: 25px;
+}
+
+.tools{
+    width: 15%;
+}
+
+.code{
+    width: 8%;
+}
+
+.author{
+    width: 20%;
+}
+
+.in-stock{
+    width: 12%;
+}
+
+.stock{
+    width: 8%;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+    padding: 0 3px;
+    cursor: pointer;
+}
+
+tr{
+    color: #333;
+}
+
+
+.warning{
+    color: #ad2727;
+    font-size: .8em;
+    padding-top: 5px;
+}

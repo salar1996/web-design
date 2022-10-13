@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.music-bar{
+    height: 400px;
+    width: 320px;
+    margin-top: 40px;
+    padding-top: 200px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 0 #777;
+    background-color: #e7e7e7;
+
+}
+
+div#image-holder{
+    width: 240px;
+    height: 240px;
+    top: -100px ;
+    left: 40px;
+    /* background-color: blue; */
+    margin: 0 auto;
+    position: absolute;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 25px 0 #666;
+    background: url("../media/covers/Shabe-Royaei.png") no-repeat  center;
+    background-size: 240px;
+}
+
+#music-name{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#singer{
+    font-size: 20px;
+    font-weight: 500; 
+}
+
+
+#controls{
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+}
+#controls div ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-elem li{
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+    color:gray;
+}
+
+.playAndPause{
+    font-size: 40px;
+    width: 32px;
+}
+
+#time-line{
+    width: 85%;
+    height: 5px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+    cursor: pointer;
+}
+
+#time-line-show-time{
+    background-color: #310e31;
+    width: 0;
+    height: 5px;
+}
+
+#circle-showing-time-line{
+    position: absolute;
+    top: -5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100px;;
+    background-color: #310e31;
+}
+
+#time{
+    width: 85%;
+    position: absolute;
+    bottom: 110px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 12px;
+    color:#444;
+}
+
+#current-time{
+    float: left;
+}
+
+#total-time{
+    float: right;
+}
+
+
+
+body{
+    background: url("../media/covers/Shabe-Royaei.png") no-repeat  center;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    color: #222;
+}

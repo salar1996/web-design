@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            background: url(../images/backgrounds/004.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height:100vh;
+            text-align: center;
+            filter: brightness(100%);
+        }
+
+
+        section{
+            width: 40%;
+        }
+
+        .brightness{
+            display: flex;
+            padding: 20px;
+            background-color: beige;
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        input{
+            width: 90%;
+            /* scrollbar-color: red; */
+        }
+
+        .brightness :nth-child(1){
+            float: left;
+            padding: 0 10px;
+        }
+
+        .brightness :nth-child(3){
+            float: right;
+            padding: 0 10px;
+        }
+
+
+    </style>
+    <title>change brightness level</title>
+</head>
+<body>
+    <div class="container">
+        <section>
+
+            <div class="brightness">
+                <i class="far fa-sun"></i>
+                <input type="range" min="15" max="100" value="100" id="brightness-selector">
+                <i class="fas fa-sun"></i>
+
+            </div>
+        </section>
+    </div>
+    
+
+
+    <script src="../js/font-awesome.js"></script>
+    <script>
+        const $ = document;
+        const inputBtn = $.getElementById("brightness-selector");
+        const brightness = $.querySelector(".container");
+        let brightnessLvl = 100;
+
+
+        inputBtn.addEventListener("change", chengeBrightness);
+
+        function chengeBrightness(){
+            brightnessLvl = inputBtn.value;
+            brightness.style.filter = "brightness(" + brightnessLvl + "%)"
+        }
+    </script>
+</body>
+</html>
