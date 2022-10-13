@@ -51,6 +51,7 @@ const cartInfo = $.querySelector(".cart-modal");
 
 let currentPage = 1;
 let pageItems = 24;
+export {pageItems};
 ////////////////////////////////////////////// events
 cartIcon.addEventListener("click", showCart);
 
